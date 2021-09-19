@@ -8,7 +8,7 @@
   margin-bottom: 30px;
 }
 
-@-webkit-keyframes rotating /* Safari and Chrome */ {
+@-webkit-keyframes rotating {
   from {
     -webkit-transform: rotate(0deg);
     -o-transform: rotate(0deg);
@@ -119,4 +119,31 @@
 
 #hire-key-area {
   margin-top: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  #greetings {
+    font-size: 36px;
+  }
+
+  #sub-greetings {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #social-key-area {
+    position: static;
+    flex-direction: row;
+    transform: none;
+    margin: 20px 0 10px 0;
+  }
+
+  #social-key-area .key:nth-of-type(2) {
+    margin: 0 15px;
+  }
+
+  #social-key-area .key:nth-of-type(4) {
+    margin: 0 0 0 15px;
+  }
 }
