@@ -28,7 +28,7 @@ function App() {
         <Header theme={theme} setTheme={setTheme} />
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Home theme={theme} />
           </Route>
         </Switch>
       </div>

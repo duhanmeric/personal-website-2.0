@@ -1,7 +1,12 @@
 import React from "react";
 import Key from "./Key";
+import ReactSVG from "../components/ReactSVG";
 
-const Intro: React.FC = () => {
+interface Props {
+  theme: string | null;
+}
+
+const Intro: React.FC<Props> = ({ theme }) => {
   const socialKeys = [
     {
       id: 0,
@@ -27,15 +32,25 @@ const Intro: React.FC = () => {
 
   return (
     <div id="intro">
-      <div className="row mx-0">
+      <div className="row mx-0 justify-content-center align-items-center">
         <div className="col-lg-5 col-xl-5 px-0 intro-text-col">
-          <h1 id="greetings" data-aos="fade-up">
+          <div className="intro-img-container">
+            <ReactSVG theme={theme} />
+          </div>
+          <h1 id="greetings" className="text-center" data-aos="fade-up">
             HI THERE!🎉
           </h1>
-          <h3 id="sub-greetings" data-aos="fade-up">
+          <h3
+            id="sub-greetings"
+            style={{ fontWeight: "bold" }}
+            className="text-center"
+            data-aos="fade-up"
+          >
             I’m <span id="code">duhan meric</span>
             <br />
-            <span id="who">who can make minimalist websites</span>
+            <span id="who" style={{ fontWeight: "normal" }}>
+              who can make minimalist websites
+            </span>
           </h3>
           <div id="social-key-area">
             {socialKeys.map((k) => (
@@ -47,12 +62,12 @@ const Intro: React.FC = () => {
               />
             ))}
           </div>
-          <div id="scroll-key-area">
+          <div id="hire-key-area">
             <Key
               keyIcon="fas fa-level-down-alt"
               keyLink="#"
               isSocialKey={false}
-              keyText="scroll"
+              keyText="hire me"
             />
           </div>
         </div>
