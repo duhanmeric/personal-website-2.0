@@ -1,0 +1,131 @@
+#header {
+  height: 100px;
+  padding: 0 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--whiteToBlack);
+}
+
+#logo {
+  font-size: 24px;
+}
+
+#logo a {
+  text-decoration: none;
+  color: var(--blackToWhite);
+  font-weight: bold;
+  user-select: none;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-list li {
+  font-weight: bold;
+  font-size: 18px;
+  user-select: none;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: var(--blackToWhite);
+}
+
+.nav-list li a::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: var(--primary);
+  display: block;
+  transition: all 0.3s;
+}
+
+.nav-list li a.active::after {
+  width: 100%;
+}
+
+.nav-list li:nth-of-type(2) {
+  margin: 0 70px;
+}
+
+#desktopSwitch {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: var(--blackToWhite);
+  margin-left: 70px;
+  cursor: pointer;
+}
+
+#mobileNav {
+  display: none;
+}
+
+#mobileSwitch {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: var(--blackToWhite);
+}
+
+@media screen and (max-width: 768px) {
+  #header {
+    padding: 0 30px;
+  }
+
+  #nav {
+    position: absolute;
+    right: -100%;
+    top: 100px;
+    height: calc(100vh - 100px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s;
+    background-color: var(--whiteToBlack);
+  }
+
+  #nav.opened {
+    right: 0;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px !important;
+  }
+
+  .nav-list li:nth-of-type(2) {
+    margin: 20px 0 !important;
+  }
+
+  #desktopSwitch {
+    display: none;
+  }
+
+  .nav-list li a {
+    font-size: 32px;
+  }
+
+  #mobileNav {
+    display: flex;
+  }
+
+  #mobileSwitch {
+    margin-right: 20px;
+  }
+
+  #openingMenu i {
+    font-size: 24px;
+    transition: transform 0.2s;
+    color: var(--blackToWhite);
+  }
+
+  #openingMenu i.rotateBar {
+    transform: rotate(359deg);
+  }
+}

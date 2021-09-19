@@ -1,0 +1,46 @@
+:root {
+  --blackToWhite: #212121;
+  --whiteToBlack: #fff;
+  --primary: #00ba63;
+}
+
+body.dark {
+  --blackToWhite: #fff;
+  --whiteToBlack: #212121;
+  --primary: #f44336;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--whiteToBlack);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+@import "./styles/_header.css";
+@import "./styles/_intro.css";
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+html,
+body,
+#root,
+.app {
+  height: 100%;
+}
+
+* {
+  font-family: "Space Mono", monospace;
+}
+
+#home {
+  margin-top: 100px;
+  padding: 50px 100px;
+}
