@@ -2,11 +2,7 @@ import React from "react";
 import Key from "./Key";
 import ReactSVG from "../components/ReactSVG";
 
-interface Props {
-  theme: string | null;
-}
-
-const Intro: React.FC<Props> = ({ theme }) => {
+const Intro: React.FC = () => {
   const socialKeys = [
     {
       id: 0,
@@ -35,7 +31,7 @@ const Intro: React.FC<Props> = ({ theme }) => {
       <div className="row mx-0 justify-content-center align-items-center">
         <div className="col-lg-5 col-xl-5 px-0 intro-text-col">
           <div className="intro-img-container">
-            <ReactSVG theme={theme} />
+            <ReactSVG />
           </div>
           <h1 id="greetings" className="text-center" data-aos="fade-up">
             HI THERE!🎉
