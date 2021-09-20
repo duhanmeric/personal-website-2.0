@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./views/Home";
 import Footer from "./components/Footer";
+import About from "./views/About";
 
 function App() {
   const [theme, setTheme] = useState(
@@ -30,6 +31,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/about">
+            <About />
           </Route>
         </Switch>
         <Footer />

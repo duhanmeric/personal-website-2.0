@@ -29,6 +29,7 @@ code {
 @import "./styles/_intro.css";
 @import "./styles/_works.css";
 @import "./styles/_footer.css";
+@import "./styles/_aboutShow.css";
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
 
 html,
@@ -42,13 +43,15 @@ body,
   font-family: "Space Mono", monospace;
 }
 
-#home {
+#home,
+#about {
   margin-top: 100px;
   padding: 0 100px 0 100px;
 }
 
 @media screen and (max-width: 768px) {
-  #home {
+  #home,
+  #about {
     padding: 0 30px;
   }
 }
