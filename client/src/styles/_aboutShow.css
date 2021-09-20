@@ -257,3 +257,48 @@
     transform: skew(3deg);
   }
 }
+
+@media screen and (max-width: 576px) {
+  .about-show {
+    max-height: 450px;
+    padding: 50px;
+  }
+
+  .tencity-text {
+    font-size: 24px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-show {
+    max-height: 500px;
+    padding: 50px;
+  }
+
+  .tencity-text {
+    font-size: 32px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .about-show {
+    max-height: 500px;
+    padding: 50px;
+  }
+
+  .tencity-text {
+    font-size: 36px !important;
+  }
+}
+
+@media screen and (min-height: 750px) {
+  .about-show {
+    padding: 50px 0 100px 0;
+  }
+}
+
+@media screen and (min-height: 1024px) {
+  .about-show {
+    padding: 100px 0 100px 0;
+  }
+}
