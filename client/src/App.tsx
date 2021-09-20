@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./views/Home";
+import Footer from "./components/Footer";
 
 function App() {
   const [theme, setTheme] = useState(
@@ -31,6 +32,7 @@ function App() {
             <Home />
           </Route>
         </Switch>
+        <Footer />
       </div>
     </Router>
   );

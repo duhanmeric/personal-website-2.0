@@ -28,6 +28,7 @@ code {
 @import "./styles/_header.css";
 @import "./styles/_intro.css";
 @import "./styles/_works.css";
+@import "./styles/_footer.css";
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
 
 html,

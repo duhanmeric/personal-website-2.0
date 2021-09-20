@@ -1,0 +1,31 @@
+footer {
+  background-color: var(--whiteToBlack);
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid var(--primary);
+}
+
+.author {
+  color: var(--blackToWhite);
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.sub-author {
+  color: var(--blackToWhite);
+}
+
+@media screen and (max-width: 576px) {
+  footer {
+    padding: 0 30px;
+  }
+
+  .author,
+  .sub-author {
+    text-align: center;
+  }
+}
