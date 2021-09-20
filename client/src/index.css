@@ -30,6 +30,8 @@ code {
 @import "./styles/_works.css";
 @import "./styles/_footer.css";
 @import "./styles/_aboutShow.css";
+@import "./styles/_aboutMe.css";
+@import "./styles/_aboutTechs.css";
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
 
 html,
