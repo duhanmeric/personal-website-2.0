@@ -93,7 +93,7 @@ const Key: React.FC<Props> = ({ keyIcon, keyLink, isSocialKey, keyText }) => {
             href={
               keyText === "hire me"
                 ? "http://localhost:3000/contact"
-                : "http://localhost:3000/contact"
+                : `${keyLink}`
             }
             style={notSocialKeyALink}
             target={"_blank"}
