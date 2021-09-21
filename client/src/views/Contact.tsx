@@ -46,7 +46,7 @@ const Contact: React.FC = () => {
               <Key
                 keyIcon="fas fa-level-down-alt"
                 keyLink="#"
-                isSocialKey={false}
+                typeOfKey="contact"
                 keyText="send"
               />
             </div>

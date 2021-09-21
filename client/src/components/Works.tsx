@@ -68,13 +68,13 @@ const Works: React.FC = () => {
               <Key
                 keyIcon="fas fa-level-down-alt"
                 keyLink={w.websiteLink}
-                isSocialKey={false}
+                typeOfKey="work"
                 keyText="website"
               />
               <Key
                 keyIcon="fas fa-level-down-alt"
                 keyLink={w.githubLink}
-                isSocialKey={false}
+                typeOfKey="work"
                 keyText="github"
               />
             </div>

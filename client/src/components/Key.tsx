@@ -1,14 +1,15 @@
 import CSS from "csstype";
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 interface Props {
   keyIcon: string;
   keyLink: string;
-  isSocialKey: boolean;
   keyText?: string;
+  typeOfKey: string;
 }
 
-const notSocialKey: CSS.Properties = {
+const hireKey: CSS.Properties = {
   paddingRight: "3px",
   width: "150px",
   height: "49px",
@@ -20,13 +21,43 @@ const notSocialKey: CSS.Properties = {
   borderRadius: "6px",
 };
 
-const notSocialKeyALink: CSS.Properties = {
+const hireKeyALink: CSS.Properties = {
   borderRadius: "inherit",
   width: "90%",
   textDecoration: "none",
 };
 
-const notSocialKeyInnerContainer: CSS.Properties = {
+const hireKeyInnerContainer: CSS.Properties = {
+  width: "90%",
+  height: "42px",
+  fontSize: "18px",
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  borderRadius: "inherit",
+  margin: "0 auto",
+  padding: "0 5px",
+};
+
+const workKey: CSS.Properties = {
+  paddingRight: "3px",
+  width: "150px",
+  height: "49px",
+  userSelect: "none",
+  cursor: "pointer",
+  display: "flex",
+  justifyContent: "flex-end",
+  alignItems: "center",
+  borderRadius: "6px",
+};
+
+const workKeyALink: CSS.Properties = {
+  borderRadius: "inherit",
+  width: "90%",
+  textDecoration: "none",
+};
+
+const workKeyInnerContainer: CSS.Properties = {
   width: "90%",
   height: "42px",
   fontSize: "18px",
@@ -50,7 +81,7 @@ const socialKey: CSS.Properties = {
   borderRadius: "6px",
 };
 
-const keyALink: CSS.Properties = {
+const socialKeyALink: CSS.Properties = {
   borderRadius: "inherit",
 };
 
@@ -64,17 +95,22 @@ const socialKeyInnerContainer: CSS.Properties = {
   borderRadius: "inherit",
 };
 
-const Key: React.FC<Props> = ({ keyIcon, keyLink, isSocialKey, keyText }) => {
-  return (
-    <>
-      {isSocialKey ? (
+const Key: React.FC<Props> = ({ keyIcon, keyLink, typeOfKey, keyText }) => {
+  const socialKeyFunc = () => {
+    if (typeOfKey === "social") {
+      return (
         <div
           className="key"
           style={socialKey}
           data-aos="fade-up"
           data-aos-once="true"
         >
-          <a href={keyLink} style={keyALink} target="_blank" rel="noreferrer">
+          <a
+            href={keyLink}
+            style={socialKeyALink}
+            target="_blank"
+            rel="noreferrer"
+          >
             <div className="key-container" style={socialKeyInnerContainer}>
               <div className="key-icon">
                 <i className={`${keyIcon}`}></i>
@@ -82,34 +118,75 @@ const Key: React.FC<Props> = ({ keyIcon, keyLink, isSocialKey, keyText }) => {
             </div>
           </a>
         </div>
-      ) : (
+      );
+    } else if (typeOfKey === "hire") {
+      return (
         <div
           className="key"
-          style={notSocialKey}
+          style={hireKey}
+          data-aos="fade-up"
+          data-aos-once="true"
+        >
+          <NavLink to={keyLink} style={hireKeyALink}>
+            <div className="key-container" style={hireKeyInnerContainer}>
+              <div className="key-text">{keyText}</div>
+              <div className="key-icon" style={{ transform: "rotate(90deg)" }}>
+                <i className={`${keyIcon}`}></i>
+              </div>
+            </div>
+          </NavLink>
+        </div>
+      );
+    } else if (typeOfKey === "work") {
+      return (
+        <div
+          className="key"
+          style={workKey}
           data-aos="fade-up"
           data-aos-once="true"
         >
           <a
-            href={
-              keyText === "hire me"
-                ? "http://localhost:3000/contact"
-                : `${keyLink}`
-            }
-            style={notSocialKeyALink}
-            target={"_blank"}
+            href={keyLink}
+            target="_blank"
             rel="noreferrer"
+            style={workKeyALink}
           >
-            <div className="key-container" style={notSocialKeyInnerContainer}>
+            <div className="key-container" style={workKeyInnerContainer}>
               <div className="key-text">{keyText}</div>
-              <div style={{ transform: "rotate(90deg)" }} className="key-icon">
+              <div className="key-icon" style={{ transform: "rotate(90deg)" }}>
                 <i className={`${keyIcon}`}></i>
               </div>
             </div>
           </a>
         </div>
-      )}
-    </>
-  );
+      );
+    } else if (typeOfKey === "contact") {
+      return (
+        <div
+          className="key"
+          style={workKey}
+          data-aos="fade-up"
+          data-aos-once="true"
+        >
+          <a
+            href={keyLink}
+            target="_blank"
+            rel="noreferrer"
+            style={workKeyALink}
+          >
+            <div className="key-container" style={workKeyInnerContainer}>
+              <div className="key-text">{keyText}</div>
+              <div className="key-icon" style={{ transform: "rotate(90deg)" }}>
+                <i className={`${keyIcon}`}></i>
+              </div>
+            </div>
+          </a>
+        </div>
+      );
+    }
+  };
+
+  return <>{socialKeyFunc()}</>;
 };
 
 export default Key;

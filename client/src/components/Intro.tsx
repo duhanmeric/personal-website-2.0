@@ -54,15 +54,15 @@ const Intro: React.FC = () => {
                 key={k.id}
                 keyIcon={k.icon}
                 keyLink={k.link}
-                isSocialKey={true}
+                typeOfKey="social"
               />
             ))}
           </div>
           <div id="hire-key-area">
             <Key
               keyIcon="fas fa-level-down-alt"
-              keyLink="#"
-              isSocialKey={false}
+              keyLink="/contact"
+              typeOfKey="hire"
               keyText="hire me"
             />
           </div>
