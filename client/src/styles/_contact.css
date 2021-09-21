@@ -10,6 +10,7 @@
 
 .contact-container {
   margin-bottom: 50px;
+  position: relative;
 }
 
 #contact-title {
@@ -40,6 +41,39 @@ form {
 .form-control:focus {
   border-color: var(--primary);
   box-shadow: 0 0 0 0.25rem var(--primary-lowAlpha);
+}
+
+.sendBtn {
+  border: none;
+  background-color: var(--whiteToBlack);
+}
+
+.sendBtn:hover {
+  background-color: var(--primary);
+}
+
+#error,
+#success {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  background-color: #e6e6e6;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#error::before,
+#success::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 2px solid var(--primary);
+  left: 5px;
+  bottom: 5px;
 }
 
 @media screen and (max-width: 768px) {

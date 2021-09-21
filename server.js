@@ -1,33 +1,44 @@
 const express = require("express");
+const cors = require("cors");
 const nodemailer = require("nodemailer");
 const app = express();
 const port = process.env.PORT || 5000;
 require("dotenv").config();
 
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  port: 587,
-  secure: false,
-  auth: {
-    user: "krokenn34@gmail.com",
-    pass: process.env.MAIL_PASS,
-  },
-});
+app.use(express.json());
+app.use(cors());
 
-const mailOptions = {
-  from: "krokenn34@gmail.com",
-  to: "krokenn34@gmail.com",
-  subject: "Account Verification",
-  text: "That was easy!",
-  html: "<p>xdxd</p>",
-};
+app.post("/sendmail", (req, res) => {
+  const { name, email, message } = req.body;
 
-transporter.sendMail(mailOptions, function (error, info) {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log("Email sent: " + info.response);
-  }
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    port: 587,
+    secure: false,
+    auth: {
+      user: "krokenn34@gmail.com",
+      pass: process.env.MAIL_PASS,
+    },
+  });
+
+  const mailOptions = {
+    from: "krokenn34@gmail.com",
+    to: "krokenn34@gmail.com",
+    subject: "Websitenden yeni bir mesajın var!",
+    html: `Gönderenin adı: ${name} <br/> Gönderenin maili: ${email} <br/> Gönderenin mesajı: ${message}`,
+  };
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Email sent: " + info.response);
+    }
+  });
+
+  res.send(
+    `Gönderenin adı: ${name} <br/> Gönderenin maili: ${email} <br/> Gönderenin mesajı: ${message}`
+  );
 });
 
 app.listen(port, () => {

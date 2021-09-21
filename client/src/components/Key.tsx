@@ -168,19 +168,14 @@ const Key: React.FC<Props> = ({ keyIcon, keyLink, typeOfKey, keyText }) => {
           data-aos="fade-up"
           data-aos-once="true"
         >
-          <a
-            href={keyLink}
-            target="_blank"
-            rel="noreferrer"
-            style={workKeyALink}
-          >
+          <button type="submit" className="sendBtn" style={workKeyALink}>
             <div className="key-container" style={workKeyInnerContainer}>
               <div className="key-text">{keyText}</div>
               <div className="key-icon" style={{ transform: "rotate(90deg)" }}>
                 <i className={`${keyIcon}`}></i>
               </div>
             </div>
-          </a>
+          </button>
         </div>
       );
     }
