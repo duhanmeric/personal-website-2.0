@@ -1,0 +1,28 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duhanmeric/personal-website-2.0.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duhanmeric/personal-website-2.0/issues"
+  },
+  "homepage": "https://github.com/duhanmeric/personal-website-2.0#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemailer": "^6.6.3"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0"
+  }
+}
