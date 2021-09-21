@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./views/Home";
 import Footer from "./components/Footer";
 import About from "./views/About";
+import Contact from "./views/Contact";
 
 function App() {
   const [theme, setTheme] = useState(
@@ -34,6 +35,9 @@ function App() {
           </Route>
           <Route exact path="/about">
             <About />
+          </Route>
+          <Route exact path="/contact">
+            <Contact />
           </Route>
         </Switch>
         <Footer />

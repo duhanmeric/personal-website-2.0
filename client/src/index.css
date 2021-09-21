@@ -2,12 +2,14 @@
   --blackToWhite: #212121;
   --whiteToBlack: #fff;
   --primary: #00ba63;
+  --primary-lowAlpha: rgba(0, 186, 99, 0.4);
 }
 
 body.dark {
   --blackToWhite: #fff;
   --whiteToBlack: #212121;
   --primary: #f44336;
+  --primary-lowAlpha: rgba(244, 67, 54, 0.4);
 }
 
 body {
@@ -32,6 +34,7 @@ code {
 @import "./styles/_aboutShow.css";
 @import "./styles/_aboutMe.css";
 @import "./styles/_aboutTechs.css";
+@import "./styles/_contact.css";
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
 
 html,
@@ -48,7 +51,7 @@ body,
 #home,
 #about {
   margin-top: 100px;
-  padding: 0 100px 0 100px;
+  padding: 0 100px;
 }
 
 @media screen and (max-width: 768px) {

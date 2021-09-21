@@ -1,0 +1,97 @@
+#contact {
+  padding: 50px 100px;
+  margin-top: 100px;
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+}
+
+.contact-container {
+  margin-bottom: 50px;
+}
+
+#contact-title {
+  font-weight: bold;
+  font-size: 40px;
+  color: var(--blackToWhite);
+}
+
+form {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.contact-col:not(:nth-of-type(3)) {
+  max-width: 400px;
+  margin: 20px auto 0 auto;
+}
+
+.contact-col:nth-of-type(3) .form-floating {
+  margin-top: 30px;
+}
+
+.form-floating:last-of-type textarea {
+  resize: none !important;
+  height: 200px;
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.25rem var(--primary-lowAlpha);
+}
+
+@media screen and (max-width: 768px) {
+  #contact {
+    padding: 50px 30px;
+  }
+
+  form {
+    max-width: 100% !important;
+  }
+
+  .contact-col {
+    max-width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #contact {
+    padding: 50px 30px;
+    height: 100%;
+  }
+
+  .contact-container {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  #contact {
+    padding: 50px 30px;
+  }
+
+  form .row {
+    justify-content: center;
+  }
+
+  .contact-col {
+    max-width: 400px;
+  }
+
+  .send-key-container {
+    max-width: 400px;
+  }
+}
+
+@media screen and (min-height: 834px) {
+  #contact {
+    height: calc(100vh - 300px);
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+  }
+}
