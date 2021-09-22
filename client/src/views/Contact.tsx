@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import Key from "../components/Key";
 import axios from "axios";
 
@@ -8,37 +8,56 @@ const Contact: React.FC = () => {
   const [message, setMessage] = useState("");
   const [error, setError] = useState(false);
   const [isSent, setIsSent] = useState(false);
+  const [lastSent, setLastSent] = useState<number>(0);
+  const dateNow = useRef<number>(0);
+
+  useEffect(() => {
+    dateNow.current = Date.now();
+  }, []);
 
   const sendEmail = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      if (name !== "" || email !== "" || message !== "") {
-        axios
-          .post("http://localhost:5000/sendmail", {
-            name,
-            email,
-            message,
-          })
-          .then(() => {
-            setName("");
-            setEmail("");
-            setMessage("");
-            setIsSent(true);
-            setTimeout(() => {
-              setIsSent(false);
-            }, 3000);
-          })
-          .catch(() => {
-            setError(true);
-          });
+      console.log(dateNow.current, lastSent, dateNow.current - lastSent > 5000);
+      if (dateNow.current - lastSent > 5000) {
+        setLastSent(Date.now());
+        if (name !== "" || email !== "" || message !== "") {
+          axios
+            .post("http://localhost:5000/sendmail", {
+              name,
+              email,
+              message,
+            })
+            .then(() => {
+              setName("");
+              setEmail("");
+              setMessage("");
+              setIsSent(true);
+              dateNow.current = Date.now();
+              setTimeout(() => {
+                setIsSent(false);
+              }, 3000);
+            })
+            .catch(() => {
+              setError(true);
+            });
+        } else {
+          setError(true);
+          dateNow.current = Date.now();
+          setTimeout(() => {
+            setError(false);
+          }, 3000);
+        }
       } else {
         setError(true);
+        setIsSent(false);
+        dateNow.current = Date.now();
         setTimeout(() => {
           setError(false);
         }, 3000);
       }
     },
-    [name, email, message]
+    [name, email, message, lastSent]
   );
 
   return (
