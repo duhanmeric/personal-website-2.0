@@ -7,6 +7,7 @@ import About from "./views/About";
 import Contact from "./views/Contact";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
   const [theme, setTheme] = useState(
@@ -31,10 +32,15 @@ function App() {
     Aos.init({ duration: 1000 });
   }, []);
 
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <Router>
       <div className="app">
         <Header theme={theme} setTheme={setTheme} />
+        <ScrollToTop />
         <Switch>
           <Route exact path="/">
             <Home />
