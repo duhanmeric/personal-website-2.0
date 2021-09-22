@@ -5,6 +5,8 @@ import Home from "./views/Home";
 import Footer from "./components/Footer";
 import About from "./views/About";
 import Contact from "./views/Contact";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function App() {
   const [theme, setTheme] = useState(
@@ -24,6 +26,10 @@ function App() {
       }
     }
   });
+
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
 
   return (
     <Router>

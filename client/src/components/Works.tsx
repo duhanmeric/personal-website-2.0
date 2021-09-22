@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import wizard from "../assets/wizard.png";
 import pathfinder from "../assets/pathfinder.png";
 import photographer from "../assets/photographer.png";
@@ -55,7 +55,12 @@ const Works: React.FC = () => {
       </h1>
 
       {works.map((w) => (
-        <div className="row mx-0 works-row" key={w.id}>
+        <div
+          className="row mx-0 works-row"
+          data-aos="fade-up"
+          data-aos-once="true"
+          key={w.id}
+        >
           <div className="col-sm-10 col-md-8 col-lg-5 col-xl-4 col-xxl-4 work-img-col">
             <div className="img-wrapper">
               <img src={w.img} alt="" />

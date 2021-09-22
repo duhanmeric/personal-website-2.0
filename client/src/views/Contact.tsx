@@ -62,7 +62,11 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contact">
-      <div className="contact-container">
+      <div
+        className="contact-container"
+        data-aos="fade-up"
+        data-aos-once="true"
+      >
         {error ? <div id="error">error</div> : null}
         {isSent ? <div id="success">success</div> : null}
         <h1 id="contact-title" className="text-center">

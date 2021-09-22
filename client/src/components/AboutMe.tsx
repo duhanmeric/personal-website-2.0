@@ -3,7 +3,7 @@ import me from "../assets/me.png";
 
 const AboutMe: React.FC = () => {
   return (
-    <div id="about-me">
+    <div id="about-me" data-aos="fade-up" data-aos-once="true">
       <h1 className="about-me-title">My name is Duhan Meric</h1>
       <div className="about-me-img-wrapper">
         <img src={me} alt="" />

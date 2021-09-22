@@ -139,12 +139,7 @@ const Key: React.FC<Props> = ({ keyIcon, keyLink, typeOfKey, keyText }) => {
       );
     } else if (typeOfKey === "work") {
       return (
-        <div
-          className="key"
-          style={workKey}
-          data-aos="fade-up"
-          data-aos-once="true"
-        >
+        <div className="key" style={workKey}>
           <a
             href={keyLink}
             target="_blank"
@@ -162,12 +157,7 @@ const Key: React.FC<Props> = ({ keyIcon, keyLink, typeOfKey, keyText }) => {
       );
     } else if (typeOfKey === "contact") {
       return (
-        <div
-          className="key"
-          style={workKey}
-          data-aos="fade-up"
-          data-aos-once="true"
-        >
+        <div className="key" style={workKey}>
           <button type="submit" className="sendBtn" style={workKeyALink}>
             <div className="key-container" style={workKeyInnerContainer}>
               <div className="key-text">{keyText}</div>

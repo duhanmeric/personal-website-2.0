@@ -30,10 +30,19 @@ const Intro: React.FC = () => {
     <div id="intro">
       <div className="row mx-0 justify-content-center align-items-center">
         <div className="col-lg-5 col-xl-5 px-0 intro-text-col">
-          <div className="intro-img-container">
+          <div
+            className="intro-img-container"
+            data-aos="fade-up"
+            data-aos-once="true"
+          >
             <ReactSVG />
           </div>
-          <h1 id="greetings" className="text-center" data-aos="fade-up">
+          <h1
+            id="greetings"
+            className="text-center"
+            data-aos="fade-up"
+            data-aos-once="true"
+          >
             HI THERE!🎉
           </h1>
           <h3
@@ -41,6 +50,7 @@ const Intro: React.FC = () => {
             style={{ fontWeight: "bold" }}
             className="text-center"
             data-aos="fade-up"
+            data-aos-once="true"
           >
             I’m <span id="code">duhan meric</span>
             <br />
